@@ -1,9 +1,9 @@
-import React from 'react'
 
-export default function page() {
+export default function Home() {
   return (
-    <div>
+    <section className="w-full flex-center flex-col">
+      <h1></h1>
+      </section>
       
-    </div>
   )
 }
