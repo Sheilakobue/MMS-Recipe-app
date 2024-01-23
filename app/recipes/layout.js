@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function Page() {
+export default function layout() {
   return (
     <div>
-      <p>Recipes</p>
+      Navigate to the Top
     </div>
   )
 }
-

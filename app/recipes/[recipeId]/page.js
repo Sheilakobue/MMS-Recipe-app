@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function Page() {
+export default function page() {
   return (
     <div>
-      <p>Recipes</p>
+      {recipeID}
     </div>
   )
 }
-
