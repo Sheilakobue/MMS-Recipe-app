@@ -8,6 +8,8 @@ import {signIn, signOut, useSession, getProviders} from 'next-auth/react';
 export default function Nav() {
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null);
+  const [toggleDropdown, settogglwDropdown] = useState 
+  (false);
 
   useEffect(()=> {
     const setProviders =async()=>{
@@ -82,7 +84,7 @@ export default function Nav() {
               height={37}
               className='rounded-full'
               alt='profile'
-              onClick={}
+              onClick={()=>{}}
               />
             </div>
         ):(
@@ -99,6 +101,8 @@ export default function Nav() {
               </button>
             ))}
             </>
+        )}
+        </div>
     </nav>
   )
 }
