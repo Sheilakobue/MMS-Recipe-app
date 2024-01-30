@@ -84,9 +84,19 @@ export default function Nav() {
               height={37}
               className='rounded-full'
               alt='profile'
-              onClick={()=>{}}
+              onClick={()=>setToggleDropdown((prev)=>!prev)}
               />
+
+              {toggleDropdown && (
+                <div className= 'dropdown_link'>
+                  <Link
+                onclick ={()=>setToggleDropdown(false)}
+                >     
+                My Profile
+                </Link>
             </div>
+              )}
+              </div>
         ):(
           <>
             {providers && 
