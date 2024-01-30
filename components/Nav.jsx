@@ -8,7 +8,7 @@ import {signIn, signOut, useSession, getProviders} from 'next-auth/react';
 export default function Nav() {
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown, settogglwDropdown] = useState 
+  const [toggleDropdown, setToggleDropdown] = useState 
   (false);
 
   useEffect(()=> {
@@ -88,12 +88,33 @@ export default function Nav() {
               />
 
               {toggleDropdown && (
-                <div className= 'dropdown_link'>
+                <div className= 'dropdown'>
                   <Link
-                onclick ={()=>setToggleDropdown(false)}
+                  href='/profile'
+                  className= 'dropdown_link'
+                onClick ={()=>setToggleDropdown(false)}
                 >     
                 My Profile
                 </Link>
+
+                <Link
+                  href='/create-prompt'
+                  className= 'dropdown_link'
+                onClick ={()=>setToggleDropdown
+                  (false)}
+                >     
+                create Prompt
+                </Link>
+                <button
+                type='button'
+                onClick={()=>{
+                  setToggleDropdown(false);
+                  signOut();
+                }}
+                className= 'mt-5 w-full black_btn'
+                >
+                  Sign Out
+                </button>
             </div>
               )}
               </div>
