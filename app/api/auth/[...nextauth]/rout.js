@@ -1,10 +1,6 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-console.log({
-    clientId: process.env.GOOGLE_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-})
 const handler = NextAuth({
 providers:[
     GoogleProvider({
@@ -17,6 +13,12 @@ async session ({session}) {
 
 },
 async signIn({profile}){
+    try {
+        //serverless -> lambda ->dynamodb
+        //opens only when is called
+    } catch(error){
+
+    }
 
 }
 })
