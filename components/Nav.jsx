@@ -1,16 +1,15 @@
 "use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { React, useState, useEffect } from 'react';
-import {signIn, signOut, useSession, getProviders} from 'next-auth/react';
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 export default function Nav() {
-  const {data:session} = useSession();
-  
+  const { data: session } = useSession();
+
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown, setToggleDropdown] = useState 
-  (false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(()=> {
     const setUpProviders =async()=>{
@@ -24,18 +23,16 @@ export default function Nav() {
 
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
-      <Link href='/'className='flex gap-2 flex-center'>
-      <Image 
-      src='/assets/images/INTERNET CAFE LOGO.jpg'
-      alt ='MMS Logo'
-      width={30}
-      height={30}
-      className='object-contain'
+    <Link href='/' className='flex gap-2 flex-center'>
+      <Image
+        src='/assets/images/INTERNET CAFE LOGO.jpg'
+        alt='logo'
+        width={30}
+        height={30}
+        className='object-contain'
       />
       <p className='logo_text'>MMS-Dynamic</p>
-      </Link>
-
-      {alert(providers)}
+    </Link>
 
       {/*Desktop Navigation*/}
       <div className='sm:flex hidden'>
@@ -64,13 +61,13 @@ export default function Nav() {
             </div>
         ):(
           <>
-            {providers && 
-            object.values(providers).map((provider) =>(
-              <button 
-              type= 'button'
-              key={provider.name}
-              onClick={()=>signIn(provider.id)}
-              className='black_btn'
+            {providers &&
+            Object.values(providers).map((provider) => (
+              <button
+                type='button'
+                key={provider.name}
+                onClick={() => signIn(provider.id)}
+                className='black_btn'
               >
                 Sign In
               </button>
@@ -81,8 +78,8 @@ export default function Nav() {
 
        {/*Mobile Navigation*/}
        <div className='sm:hidden flex relative'>
-        {session?.user?  (
-          <div className='flex'>
+      {session?.user ? (
+        <div className='flex'>
             <Image
               src='/assets/icons/profile.png'
               width={37}
@@ -125,13 +122,13 @@ export default function Nav() {
               </div>
         ):(
           <>
-            {providers && 
-            object.values(providers).map((provider) =>(
-              <button 
-              type= 'button'
-              key={provider.name}
-              onClick={()=>signIn(provider.id)}
-              className='black_btn'
+           {providers &&
+            Object.values(providers).map((provider) => (
+              <button
+                type='button'
+                key={provider.name}
+                onClick={() => signIn(provider.id)}
+                className='black_btn'
               >
                 Sign In
               </button>

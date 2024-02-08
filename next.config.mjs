@@ -1,5 +1,3 @@
-// next.config.mjs
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -13,9 +11,9 @@ const nextConfig = {
     config.experiments = {
       ...config.experiments,
       topLevelAwait: true,
-    };
-    return config;
-  },
-};
+    }
+    return config
+  }
+}
 
-export default nextConfig;
+module.exports = nextConfig
