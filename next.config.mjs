@@ -11,9 +11,9 @@ const nextConfig = {
     config.experiments = {
       ...config.experiments,
       topLevelAwait: true,
-    }
-    return config
-  }
-}
+    };
+    return config;
+  },
+};
 
-module.exports = nextConfig
+export default nextConfig;
